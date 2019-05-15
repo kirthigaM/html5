@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>
+        Welcome to html 5
+    </title>
+</head>
+<body>
+    <h1>Welcome to html 5</h1>
+    <h3>video</h3>
+    <video id="myvideo" width="400"  controls loop> 
+        <source src="5mb.mp4">                  
+    </video>
+    <audio id="myaudio" width="400"  controls loop muted> 
+            <source src="audiosample.mp3">                  
+            </audio>
+    <br>
+    <button id="playid" onclick="videoplay()" >Play</button>
+    <button  id="pauseid" onclick="videopause()" disabled="true">Pause</button>
+    <button id="btnReload" onclick="reloadVideo();">[]</button>
+    <button id="btnRewind" onclick="forwardRewind(-7)"><<</button>
+    <button id="btnForward" onclick="forwardRewind(7)">>></button>
+    <hr>
+    <h3>Youtube</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3OkwCLakC_4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <script>
+        var videoref =document.getElementById("myvideo")
+        var playref =document.getElementById("playid")
+        var Pauseref =document.getElementById("pauseid")
+
+    var videoplay= function(){
+        console.log("Video play called")
+        videoref.play()
+        playref.disabled=true
+        Pauseref.disabled=false  
+    }
+    var videopause= function(){
+        console.log("Video Pause called")
+        videoref.pause()
+Pauseref.disabled=true
+playref.disabled=false
+    }
+    
+   /*Function to Reload video from Beginning*/
+function reloadVideo() {
+var videoPlayer = document.getElementById("myvideo");
+videoPlayer.currentTime = 0;
+}
+/*Function to Forward & Rewind*/
+function forwardRewind(param) {
+var videoPlayer = document.getElementById("myvideo");
+videoPlayer.currentTime += param;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/dragdrop.css">
+    <title>Drag and Drop</title>
+</head>
+<body>
+    <h1> Drag and Drop</h1>
+    <div id="left" ondragover="dragStarted(event)" ondrop="dropImage1(event)">
+    <img id="ctslogo" ondragstart="imageDragged(event)" src="../Images/cognizant-logo.png" alt="" height="150" width="200" draggable="true">
+    </div> 
+    <div id="right" ondragover="PreparingForDrop(event)" ondrop="dropImage(event)">Image wil be dropped over here!</div>
+    <script> 
+    var dragStarted = function(e){
+        e.preventDefault()
+        console.log(e)
+    }
+    
+    var imageDragged = function(e){
+       
+        console.log("Dragging logo.....")
+        console.log(e.target.id)
+        e.dataTransfer.setData("imageid",e.target.id)
+    }
+    
+    var PreparingForDrop = function(e){
+        e.preventDefault()
+        console.log(e)
+    }
+
+    var dropImage = function(e){
+        var newImageId= e.dataTransfer.getData("imageid")
+              console.log(newImageId)
+              var tempLogo=document.getElementById(newImageId)
+              e.target.innerHTML =""
+              e.target.appendChild(tempLogo)
+    }
+
+    var dropImage1 = function(e){
+        var newImageId1= e.dataTransfer.getData("imageid")
+              console.log(newImageId1)
+              var tempLogo1=document.getElementById(newImageId1)
+              e.target.innerHTML =""
+              e.target.appendChild(tempLogo1)
+    }
+    </script>
+</body>
+</html>

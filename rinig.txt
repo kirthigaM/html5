@@ -1,0 +1,25 @@
+mobile first strategy
+2008
+CEO of google- Eric smith
+cmder.net- in laptop
+visualstudio code
+npm-node package manager like nuget to manage 
+
+> npm -v
+>noce -v
+how to check the installation and install
+npm i -g live-server
+live-server (check for this)
+
+
+^ctermiatejob Y
+
+light wieght http server
+ctrl+Pause break
+
+alternatievs of live server article
+live-server --port=8888
+
+
+
+Progressive web applicaytion

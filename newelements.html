@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML New Form elements</title>
+
+</head>
+<body onload="setDefaultValues()">
+    <h2>Form</h2>
+    <form action="">
+        <fieldset>
+            <legend>Personal Details</legend>
+        <div>
+            <label >Name</label> 
+            <input type="text" autofocus required pattern="[A-Za-z]{0,10}"></div>
+            <br>
+            <div>
+                <label>DOB</label>
+                <input type="date" min="2019-05-06" step="7" id="todayDate" max="2019-09-01">
+            </div>
+            <br>
+<div>
+    <label>
+        Age
+    </label>
+    <input type="number" maxlength="20" max="100">
+</div>    
+        </fieldset>
+<fieldset><legend>Professional Details</legend>
+<div>
+    <label>Email</label>
+    <input type="email">
+    </div>
+    <br>
+    <div><label>Website</label>
+        <input type="url">
+        
+       <br>
+       <div>
+           <label> How was the session?</label>
+           <input type="range" min="0" max="10" step="5" list="scores">
+           <datalist id="scores">
+               <option value="0">0</option>
+               <option value="5">5</option>
+               <option value="10">10</option>
+               <option value="15">15</option>
+           </datalist>
+       </div>
+       <br>
+       <div>
+           <input type="color">
+       </div>
+       <br>
+       <progress min="0" max="100" value="50"></progress>
+       <br>
+       <label>Select Your location:</label>
+       <br>
+<input type="text" list="citynames">
+<datalist id="citynames">
+    <option value="chennai">chennai</option>
+    <option value="Madurai">Madurai</option>
+    <option value="Bangalore">Bangalore</option>
+    <option value="Mumbai">Mumbai</option>
+</datalist>
+
+</div>
+        
+        
+        
+        </fieldset>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        var setDefaultValues=function(){
+            var date = new Date().toISOString()
+            var todayValue = date.split("T")[0]
+    document.getElementById("todayDate").max= todayValue
+    }
+    var setdatefunc= function(){
+return new Date().tostring()
+    }
+    </script>
+</body>
+</html>
